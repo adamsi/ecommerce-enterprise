@@ -1,7 +1,8 @@
 package adam.dev.ecom_enterprise.filter;
 
-import adam.dev.ecom_enterprise.util.JwtUtil;
+import adam.dev.ecom_enterprise.config.PermittedMatcher;
 import adam.dev.ecom_enterprise.service.CustomUserDetailsService;
+import adam.dev.ecom_enterprise.util.JwtUtil;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.Cookie;
@@ -19,12 +20,13 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
 
+// creates authentication credentials
 @Log4j2
 @Component
 @AllArgsConstructor
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
-private final JwtUtil jwtUtil;
+    private final JwtUtil jwtUtil;
 
 private final CustomUserDetailsService userDetailsService;
 
@@ -33,7 +35,8 @@ private final CustomUserDetailsService userDetailsService;
             throws ServletException, IOException {
         String servletPath = request.getServletPath();
 
-        if (!servletPath.startsWith("/auth/") && !servletPath.startsWith("/oauth2/authorization/")) {
+        if (!servletPath.startsWith("/auth/") && !servletPath.startsWith("/oauth2/authorization/")
+            && !servletPath.startsWith("/cronjob") && !servletPath.startsWith("/graphiql")) {
             String jwt = getJwtFromCookies(request);
 
             if (jwt != null) {

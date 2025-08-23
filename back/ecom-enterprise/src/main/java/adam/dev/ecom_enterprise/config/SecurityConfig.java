@@ -25,6 +25,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import java.util.List;
 
+// authenticates credentials
 @Configuration
 @EnableMethodSecurity
 @RequiredArgsConstructor
@@ -49,7 +50,9 @@ public class SecurityConfig implements WebMvcConfigurer {
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/oauth2/authorization/{provider}", "/auth/**", "/graphql", "/graphiql", "/cronjob/**").permitAll()
+                        .requestMatchers(
+                                "/oauth2/authorization/{provider}", "/auth/**",
+                                "/graphql", "/graphiql", "/cronjob/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .oauth2Login(oauth2 -> oauth2
