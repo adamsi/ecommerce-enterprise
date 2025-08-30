@@ -71,6 +71,9 @@ export const HeroTitle = styled(Heading).attrs({ as: "h1" })`
   animation: ${zoomInDown} 2s var(--transition-normal);
   z-index: 1;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  hyphens: none !important;
+  word-break: keep-all !important;
+  overflow-wrap: normal !important;
 
   font-size: 3.5rem; // Larger font size for impact
 
@@ -85,6 +88,9 @@ export const Subtitle = styled(Heading).attrs({ as: "h3" })`
   z-index: 1;
   margin-bottom: var(--spacing-lg);
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  hyphens: none !important;
+  word-break: keep-all !important;
+  overflow-wrap: normal !important;
   font-size: 2rem;
 
   @media (max-width: 768px) {

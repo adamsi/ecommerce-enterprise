@@ -198,6 +198,11 @@ const GlobalStyles = createGlobalStyle`
     font-family: var(--font-primary);
   }
 
+  * {
+    hyphens: none;
+    word-break: keep-all;
+  }
+
   p,
   h1,
   h2,
@@ -206,7 +211,8 @@ const GlobalStyles = createGlobalStyle`
   h5,
   h6 {
     overflow-wrap: break-word;
-    hyphens: auto;
+    hyphens: none;
+    word-break: keep-all;
   }
 
   img {

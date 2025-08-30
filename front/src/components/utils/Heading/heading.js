@@ -76,6 +76,9 @@ const Heading = styled.div`
     `}
 
   line-height: 1.4;
+  hyphens: none !important;
+  word-break: keep-all !important;
+  overflow-wrap: normal !important;
 `;
 
 Heading.defaultProps = {
