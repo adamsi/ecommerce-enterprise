@@ -40,12 +40,8 @@ const menuItems = [
     link: "#",
     icon: <MdKeyboardDoubleArrowRight />,
     items: [
-      { label: "Shop Standard", link: "/all-products" },
-      { label: "Shop List", link: "/list-shop" },
-      { label: "Shopping Cart", link: "/cart-summary" },
-      { label: "Left Sidebar", link: "/shop-left-sidebar" },
-      { label: "Right Sidebar", link: "/shop-right-sidebar" },
-      { label: "Full Width", link: "/full-width" },
+      { label: "Products", link: "/all-products" },
+      { label: "Shopping Cart", link: "/cart-summary" }
     ],
   },
   {

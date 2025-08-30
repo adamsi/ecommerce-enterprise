@@ -141,22 +141,12 @@ const MenuNavigationLargeSC = () => {
             </NavLink>
           }
         >
-          <Dropdown minWidth={"30rem"}>
+          <Dropdown minWidth={"7rem"}>
             <DropdownColumnContainer>
-              <DropdownItem to="/all-products">Shop Standard</DropdownItem>
-              <DropdownItem to="/list-shop">Shop List</DropdownItem>
-              <DropdownItem to="/cart-summary">Shopping cart</DropdownItem>
+              <DropdownItem to="/all-products">Products</DropdownItem>
+              <DropdownItem to="/cart-summary">My cart</DropdownItem>
             </DropdownColumnContainer>
             <DropdownColumnContainer>
-              <DropdownItem to="/shop-left-sidebar">Left Sidebar</DropdownItem>
-              <DropdownItem to="/shop-right-sidebar">
-                Right Sidebar
-              </DropdownItem>
-              <DropdownItem to="/full-width">Full Width</DropdownItem>
-            </DropdownColumnContainer>
-            <DropdownColumnContainer>
-              <DropdownItem to="/breadcrumb-1">Breadcrumb 1</DropdownItem>
-              <DropdownItem to="/breadcrumb-2">Breadcrumb 2</DropdownItem>
             </DropdownColumnContainer>
           </Dropdown>
         </MenuItem>

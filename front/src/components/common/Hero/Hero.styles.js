@@ -85,7 +85,6 @@ export const Subtitle = styled(Heading).attrs({ as: "h3" })`
   z-index: 1;
   margin-bottom: var(--spacing-lg);
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
-  font-family: "Playfair Display", serif;
   font-size: 2rem;
 
   @media (max-width: 768px) {

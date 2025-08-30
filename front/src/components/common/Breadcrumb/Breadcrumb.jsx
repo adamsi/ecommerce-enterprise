@@ -111,7 +111,7 @@ const Breadcrumb = ({ next, next2, title, imageUrl }) => {
                 <h1 className="breadcrumb-parallax__title">{title}</h1>
                 <div className="breadcrumb-parallax__links">
                   <Link to="/">
-                    <FaHome className="breadcrumb-parallax__icon" />
+                    <FaHome className="breadcrumb-parallax__icon" style={{color:"white"}}/>
                   </Link>
                   <span className="breadcrumb-parallax__separator"> &gt; </span>
                   {next2 ? (
@@ -140,7 +140,7 @@ const Breadcrumb = ({ next, next2, title, imageUrl }) => {
       ) : (
         <div className="breadcrumb-simple">
           <Link to="/">
-            <FaHome className="breadcrumb-simple__icon" />
+            <FaHome className="breadcrumb-simple__icon" style={{color:"white"}}/>
           </Link>
           <span className="breadcrumb-simple__separator"> &gt; </span>
           {next2 ? (
