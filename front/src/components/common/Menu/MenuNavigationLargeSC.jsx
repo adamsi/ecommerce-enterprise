@@ -61,7 +61,6 @@ const IconWrapper = styled.div`
   }
 `;
 
-// Modified Component
 const DropdownColumnContainer = styled.div`
   margin-right: var(--spacing-lg);
   display: flex;
