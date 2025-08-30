@@ -4,6 +4,7 @@ import adam.dev.ecom_enterprise.filter.JwtAuthenticationFilter;
 import adam.dev.ecom_enterprise.service.CustomUserDetailsService;
 import adam.dev.ecom_enterprise.service.UserService;
 import adam.dev.ecom_enterprise.util.CookieUtil;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -55,6 +56,13 @@ public class SecurityConfig implements WebMvcConfigurer {
                                 "/graphql", "/graphiql", "/cronjob/**").permitAll()
                         .anyRequest().authenticated()
                 )
+                .exceptionHandling(ex -> ex // this handler catches security exception,
+                                                                                // business exceptions caught by GlobalExceptionHandler
+                        .authenticationEntryPoint((request, response, authException) -> {
+                            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+                            response.setContentType("application/json");
+                            response.getWriter().write("{\"error\": \"Unauthorized\"}");
+                        }))
                 .oauth2Login(oauth2 -> oauth2
                                 .loginPage("/oauth2/authorization/google")
                                 .successHandler((request, response, authentication) -> {

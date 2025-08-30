@@ -1,6 +1,5 @@
 package adam.dev.ecom_enterprise.filter;
 
-import adam.dev.ecom_enterprise.config.PermittedMatcher;
 import adam.dev.ecom_enterprise.service.CustomUserDetailsService;
 import adam.dev.ecom_enterprise.util.JwtUtil;
 import jakarta.servlet.FilterChain;
